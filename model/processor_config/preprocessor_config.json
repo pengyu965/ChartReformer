@@ -1,0 +1,14 @@
+{
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "image_processor_type": "Pix2StructImageProcessor",
+  "is_vqa": true,
+  "max_patches": 512,
+  "max_length":1024,
+  "truncation":true,
+  "patch_size": {
+    "height": 16,
+    "width": 16
+  },
+  "processor_class": "Pix2StructProcessor"
+}
