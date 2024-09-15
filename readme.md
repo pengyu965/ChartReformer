@@ -1,7 +1,7 @@
 ChartReformer: Natural Language-Driven Chart Image Editing
 ===
 
-Checkout our paper in ICDAR2024 [<u>[Link]</u>](https://arxiv.org/abs/2403.00209)
+Checkout our paper in ICDAR2024 [<u>[Link]</u>]([https://arxiv.org/abs/2403.00209](https://link.springer.com/chapter/10.1007/978-3-031-70533-5_26))
 
 The dataset can be downloaded from [<u>[HERE]</u>](https://drive.google.com/file/d/1Q5TfuwkrcQrK7V3usQ3w3oaVSEYvJIBq/view?usp=sharing).
 
