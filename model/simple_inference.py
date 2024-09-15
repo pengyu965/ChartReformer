@@ -11,6 +11,7 @@ from Chart_Reploter import Replot
 
 from transformers import AutoProcessor, Pix2StructForConditionalGeneration
 
+
 workspace = "/scratch2/pyan4/Workspace/"
 test_path = workspace + "/ChartDerender/data/human_eval/PMC/"
 
