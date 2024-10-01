@@ -7,7 +7,7 @@ The dataset can be downloaded from [<u>[HERE]</u>](https://drive.google.com/file
 
 The model's weight can be downloaded from [<u>[HERE]</u>](https://drive.google.com/file/d/1gu8gy_K2BvHd3OYi7aXYeVgBHUF7CYNc/view?usp=sharing).
 
-Please cite our paper"
+Please cite our paper:
 
 ```
 @inproceedings{yan2024chartreformer,
