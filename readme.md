@@ -7,6 +7,19 @@ The dataset can be downloaded from [<u>[HERE]</u>](https://drive.google.com/file
 
 The model's weight can be downloaded from [<u>[HERE]</u>](https://drive.google.com/file/d/1gu8gy_K2BvHd3OYi7aXYeVgBHUF7CYNc/view?usp=sharing).
 
+Please cite our paper"
+
+```
+@inproceedings{yan2024chartreformer,
+  title={ChartReformer: Natural Language-Driven Chart Image Editing},
+  author={Yan, Pengyu and Bhosale, Mahesh and Lal, Jay and Adhikari, Bikhyat and Doermann, David},
+  booktitle={International Conference on Document Analysis and Recognition},
+  pages={453--469},
+  year={2024},
+  organization={Springer}
+}
+```
+
 
 
 ## Taxonomy
