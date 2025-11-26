@@ -1,5 +1,6 @@
 ChartReformer: Natural Language-Driven Chart Image Editing
 ===
+Pengyu Yan, [Mahesh Bhosale](https://bhosalems.github.io/), Jay Lal, Bikhyat Adhikari, David Doermann, International Conference on Document Analysis and Recognition, 2024.
 
 Official repository for the ICDAR2024 paper : [<u>[Link]</u>](https://link.springer.com/chapter/10.1007/978-3-031-70533-5_26)
 
