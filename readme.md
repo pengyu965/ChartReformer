@@ -110,7 +110,7 @@ below.
 ## 🚀 Quick start
 
 ```bash
-pip install torch transformers pillow
+pip install torch transformers pillow pandas matplotlib
 ```
 
 ```python
