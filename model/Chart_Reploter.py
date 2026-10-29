@@ -37,6 +37,10 @@ class Replot:
             self._plot_grouped_vertical_bar()
         elif self.chart_type == 'stacked vertical bar':
             self._plot_stacked_vertical_bar()
+        elif self.chart_type == 'grouped horizontal bar':
+            self._plot_grouped_horizontal_bar()
+        elif self.chart_type == 'stacked horizontal bar':
+            self._plot_stacked_horizontal_bar()
 
     def get_data_table(self):
         return self.src_data.loc[:, :]
@@ -128,6 +132,58 @@ class Replot:
 
         self.ax.set_xticks(center_positions)
         self.ax.set_xticklabels(x_ticks)
+        self._plot_common_props()
+
+    def _plot_grouped_horizontal_bar(self):
+        df = self._preprocess_table(self.get_data_table())
+        emp = np.arange(df.shape[0])
+        bar_padding = 0.05
+        bar_width = (1 / (len(emp) + 1)) - bar_padding
+
+        first_col = df.columns[0]
+        bar_property_keyname = "bar_properties"
+        for idx, col in enumerate(df.columns[1:]):
+            base_positions = emp - (df.shape[1] * bar_width / 2) + (idx * bar_width)
+            kwargs = dict(height=bar_width,
+                          label=col,
+                          color=self.properties[bar_property_keyname]["colors"][idx],
+                          hatch=self.properties[bar_property_keyname]["hatches"][idx],
+                          align='edge'
+                          )
+            args = [base_positions]
+            args.append(df[[col]].rename(columns={col: "y"})["y"])
+            self.ax.barh(*args, **kwargs)
+
+        bottommost_positions = emp - (df.shape[1] * bar_width / 2)
+        topmost_positions = emp + (df.shape[1] * bar_width / 2) - bar_width
+        center_positions = (bottommost_positions + topmost_positions) / 2
+
+        self.ax.set_yticks(center_positions)
+        self.ax.set_yticklabels(df[first_col])
+        self._plot_common_props()
+
+    def _plot_stacked_horizontal_bar(self):
+        df = self._preprocess_table(self.get_data_table()).T.reset_index()
+        df.columns = df.iloc[0, :].values
+        df = df.drop(index=0).reset_index(drop=True)
+        emp = np.arange(df.shape[1]-1)
+        bar_padding = 0.05
+        bar_width = (1 / (len(emp) + 1)) - bar_padding
+        y_ticks = df.columns[1:]
+        bar_property_keyname = "bar_properties"
+
+        lefts = np.zeros(df.shape[1] - 1)
+        for idx, row in df.iterrows():
+            self.ax.barh(emp, row.iloc[1:].values,
+                         label=row.iloc[0],
+                         left=lefts,
+                         hatch=self.properties[bar_property_keyname]['hatches'][idx],
+                         color=self.properties[bar_property_keyname]['colors'][idx],
+                         height=bar_width)
+            lefts += row.iloc[1:].values.astype(float)
+
+        self.ax.set_yticks(emp)
+        self.ax.set_yticklabels(y_ticks)
         self._plot_common_props()
 
     def _plot_common_props(self):
